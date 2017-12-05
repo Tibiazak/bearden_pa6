@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
    pid_t wait = 0;
    int i, pr_limit, pr_count, status;
    pr_count = 0;
-   char * str = "";
+   char str[MAX_BUF];
 
    if(argc != 2)
    {
