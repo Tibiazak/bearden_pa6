@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
          {
             wait = waitpid(-1, &status, WNOHANG);
          }
-         printf("Process %d exited with status %d\n", wait, WEXITSTATUS(status));
+         printf("Process %d exited with status %d\n", wait, status);
          pr_count--;
       }
       
@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
          if (wait != 0)
          {
             pr_count--;
-            printf("Process %d exited with status %d\n", wait, WEXITSTATUS(status));
+            printf("Process %d exited with status %d\n", wait, status);
          }
       }
       done = fgets(str, MAX_BUF, stdin);
@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
       if(wait != 0)
       {
          pr_count--;
-         printf("Process %d exited with status %d\n", wait, WEXITSTATUS(status));
+         printf("Process %d exited with status %d\n", wait, status);
       }
    }
 
