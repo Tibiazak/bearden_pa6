@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
       if(wait != 0)
       {
          pr_count--;
-         printf("Process %d exited with status %d\n", wait, WEXITSTATUS(status);
+         printf("Process %d exited with status %d\n", wait, WEXITSTATUS(status));
       }
    }
 
