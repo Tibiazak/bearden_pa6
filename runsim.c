@@ -66,6 +66,7 @@ int main(int argc, char *argv[])
             pr_count--;
             code = WEXITSTATUS(status);
             printf("Process %d exited with status %d\n", wait, code);
+            wait = 0;
          }
       }
       done = fgets(str, MAX_BUF, stdin);
