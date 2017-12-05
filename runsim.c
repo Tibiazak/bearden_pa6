@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
    pid_t wait = 0;
    int i, pr_limit, pr_count, status;
    pr_count = 0;
-   char * str;
+   char * str = "";
 
    if(argc != 2)
    {
@@ -24,10 +24,13 @@ int main(int argc, char *argv[])
 
    fgets(str, MAX_BUF, stdin);
 
+   printf("Just before while loop\n");
+
    while(str != NULL)
    {
       if(pr_count == pr_limit)
       {
+         printf("pr_count == pr_limit\n");
          wait = waitpid(-1, &status, WNOHANG);
          while(wait == 0)
          {
