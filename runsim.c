@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
    int i, pr_limit, pr_count, status;
    pr_count = 0;
    char str[MAX_BUF];
+   char * done;
 
    if(argc != 2)
    {
@@ -22,11 +23,11 @@ int main(int argc, char *argv[])
 
    pr_limit = atoi(argv[1]);
 
-   fgets(str, MAX_BUF, stdin);
+   done = fgets(str, MAX_BUF, stdin);
 
    printf("Just before while loop\n");
 
-   while(str != NULL)
+   while(done != NULL)
    {
       printf("String is: %s\n", str);
       if(pr_count == pr_limit)
@@ -64,7 +65,7 @@ int main(int argc, char *argv[])
             printf("Process %d exited with status %d\n", wait, status);
          }
       }
-      fgets(str, MAX_BUF, stdin);
+      done = fgets(str, MAX_BUF, stdin);
    }
    while (pr_count > 0)
    {
