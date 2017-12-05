@@ -25,14 +25,11 @@ int main(int argc, char *argv[])
 
    done = fgets(str, MAX_BUF, stdin);
 
-   printf("Just before while loop\n");
-
    while(done != NULL)
    {
-      printf("String is: %s\n", str);
+      printf("Command is: %s\n", str);
       if(pr_count == pr_limit)
       {
-         printf("pr_count == pr_limit\n");
          wait = waitpid(-1, &status, WNOHANG);
          while(wait == 0)
          {
@@ -62,7 +59,7 @@ int main(int argc, char *argv[])
          if (wait != 0)
          {
             pr_count--;
-            
+
             printf("Process %d exited with status %d\n", wait, status);
          }
       }
