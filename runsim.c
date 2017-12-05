@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 
    fgets(str, MAX_BUF, stdin);
 
-   printf("Just before while loop\n");
+   printf("Just before while loop, string is %s\n", str);
 
    while(str != NULL)
    {
@@ -63,6 +63,7 @@ int main(int argc, char *argv[])
             printf("Process %d exited with status %d\n", wait, status);
          }
       }
+      fgets(str, MAX_BUF, stdin);
    }
    while (pr_count > 0)
    {
