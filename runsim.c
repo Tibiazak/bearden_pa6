@@ -35,11 +35,8 @@ int main(int argc, char *argv[])
          {
             wait = waitpid(-1, &status, WNOHANG);
          }
-         if(WIFEXITED(status))
-         {
-            printf("Process %d exited with status %d\n", wait, WEXITSTATUS(status));
-            pr_count--;
-         }
+         printf("Process %d exited with status %d\n", wait, status);
+         pr_count--;
       }
       
       pid = fork();
@@ -61,11 +58,8 @@ int main(int argc, char *argv[])
          wait = waitpid(-1, &status, WNOHANG);
          if (wait != 0)
          {
-            if(WIFEXITED(status))
-            {
-               printf("Process %d exited with status %d\n", wait, WEXITSTATUS(status));
-               pr_count--;
-            }
+            pr_count--;
+            printf("Process %d exited with status %d\n", wait, status);
          }
       }
       done = fgets(str, MAX_BUF, stdin);
@@ -75,11 +69,8 @@ int main(int argc, char *argv[])
       wait = waitpid(-1, &status, WNOHANG);
       if(wait != 0)
       {
-         if(WIFEXITED(status))
-         {
-            printf("Process %d exited with status %d\n", wait, WEXITSTATUS(status));
-            pr_count--;
-         }
+         pr_count--;
+         printf("Process %d exited with status %d\n", wait, status);
       }
    }
 
