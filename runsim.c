@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 
    fgets(str, MAX_BUF, stdin);
 
-   printf("Just before while loop\n", str);
+   printf("Just before while loop\n");
 
    while(str != NULL)
    {
