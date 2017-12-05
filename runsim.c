@@ -24,10 +24,11 @@ int main(int argc, char *argv[])
 
    fgets(str, MAX_BUF, stdin);
 
-   printf("Just before while loop, string is %s\n", str);
+   printf("Just before while loop\n", str);
 
    while(str != NULL)
    {
+      printf("String is: %s\n", str);
       if(pr_count == pr_limit)
       {
          printf("pr_count == pr_limit\n");
