@@ -68,6 +68,7 @@ int main(int argc, char *argv[])
          }
 
          execv(args[0], args);
+         perror("Exec failed.\n");
       } 
       else //if this is the parent, increment num of processes & check if a process terminated
       {
