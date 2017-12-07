@@ -10,6 +10,7 @@
 #include <string.h>
 
 #define MAX_BUF 200
+#define MAX_ARG 3
 
 //A program to create child processes running concurrently
 //that run a given command (with arguments) from stdin
@@ -60,9 +61,9 @@ int main(int argc, char *argv[])
       //if this is the child, get the command and args to run and exec      
       if(pid == 0)
       {
-         char * args[3];
+         char * args[MAX_ARG];
          args[0] = strtok(str, " ");
-         for(i = 1; i < 3; i++)
+         for(i = 1; i < MAX_ARG; i++)
          {
             args[i] = strtok(NULL, " ");
          }
